@@ -116,7 +116,7 @@ NSString *const MPToolbarItemIdentifierAutotype     = @"TOOLBAR_AUTOTYPE";
     
     if([itemIdentifier isEqualToString:MPToolbarItemIdentifierAction]) {
       NSPopUpButton *popupButton = [[NSPopUpButton alloc] initWithFrame:NSMakeRect(0, 0, 50, 32) pullsDown:YES];
-      popupButton.bezelStyle = NSTexturedRoundedBezelStyle;
+			popupButton.bezelStyle = NSBezelStyleTexturedRounded;
       popupButton.focusRingType = NSFocusRingTypeNone;
       popupButton.title = @"";
       popupButton.imageScaling = NSImageScaleProportionallyDown;

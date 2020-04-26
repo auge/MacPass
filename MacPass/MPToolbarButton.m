@@ -29,9 +29,9 @@
   self = [super initWithFrame:frameRect];
   if(self) {
     self.focusRingType = NSFocusRingTypeNone;
-    self.bezelStyle = NSTexturedRoundedBezelStyle;
+		self.bezelStyle = NSBezelStyleTexturedRounded;
     ((NSButtonCell *)(self.cell)).imageScaling = NSImageScaleProportionallyDown;
-    [self setButtonType:NSMomentaryPushInButton];
+		[self setButtonType:NSButtonTypeMomentaryPushIn];
     self.imagePosition = NSImageOnly;
   }
   return self;

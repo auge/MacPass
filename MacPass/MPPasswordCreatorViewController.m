@@ -192,7 +192,7 @@ typedef NS_ENUM(NSUInteger, MPPasswordRating) {
 }
 
 - (IBAction)_usePassword:(id)sender {
-  if(self.shouldCopyPasswordToPasteboardButton.state == NSOnState) {
+  if(self.shouldCopyPasswordToPasteboardButton.state == NSControlStateValueOn) {
     [MPPasteBoardController.defaultController copyObject:self.password];
   }
   KPKEntry *entry = self.representedObject;
@@ -374,7 +374,7 @@ typedef NS_ENUM(NSUInteger, MPPasswordRating) {
 
 - (void)_resetCharacters {
   if(self.useCustomString) {
-    self.customButton.state = NSOnState;
+		self.customButton.state = NSControlStateValueOn;
   }
   self.customCharactersTextField.enabled = self.useCustomString;
   
@@ -388,10 +388,10 @@ typedef NS_ENUM(NSUInteger, MPPasswordRating) {
   const BOOL useNumbers = (0 != (MPPasswordCharactersNumbers & self.characterFlags));
   const BOOL useSymbols = (0 != (MPPasswordCharactersSymbols & self.characterFlags));
   
-  self.upperCaseButton.state = (useUppercase ? NSOnState : NSOffState);
-  self.lowerCaseButton.state = (userLowercase ? NSOnState : NSOffState);
-  self.numbersButton.state = (useNumbers ? NSOnState : NSOffState);
-  self.symbolsButton.state = (useSymbols ? NSOnState : NSOffState);
+	self.upperCaseButton.state = (useUppercase ? NSControlStateValueOn : NSControlStateValueOff);
+	self.lowerCaseButton.state = (userLowercase ? NSControlStateValueOn : NSControlStateValueOff);
+	self.numbersButton.state = (useNumbers ? NSControlStateValueOn : NSControlStateValueOff);
+	self.symbolsButton.state = (useSymbols ? NSControlStateValueOn : NSControlStateValueOff);
 
   // ensure minimum character lenght
   if(self.ensureOccurance) {

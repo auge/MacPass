@@ -451,7 +451,7 @@
   groupItem.representedObject = group;
   groupItem.enabled = YES;
   if(uuid && [group.uuid isEqual:uuid]) {
-    groupItem.state = NSOnState;
+		groupItem.state = NSControlStateValueOn;
   }
   groupItem.indentationLevel = level;
   [menu addItem:groupItem];

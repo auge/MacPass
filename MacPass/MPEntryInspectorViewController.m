@@ -635,7 +635,7 @@ typedef NS_ENUM(NSUInteger, MPEntryTab) {
 }
 
 - (IBAction)toggleExpire:(NSButton*)sender {
-  if([sender state] == NSOnState && [self.representedEntry.timeInfo.expirationDate isEqualToDate:[NSDate distantFuture]]) {
+	if([sender state] == NSControlStateValueOn && [self.representedEntry.timeInfo.expirationDate isEqualToDate:[NSDate distantFuture]]) {
     [NSApp sendAction:self.pickExpireDateButton.action to:nil from:self.pickExpireDateButton];
   }
 }

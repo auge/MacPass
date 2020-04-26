@@ -296,7 +296,7 @@ NSString *const MPPluginHostPluginBundleIdentifiyerKey = @"MPPluginHostPluginBun
       [alert addButtonWithTitle:NSLocalizedString(@"ALERT_INCOMPATIBLE_PLUGINS_ENCOUNTERED_BUTTON_OK", @"Button in dialog to leave plugin ds disabled and continiue!")];
       [alert addButtonWithTitle:NSLocalizedString(@"ALERT_INCOMPATIBLE_PLUGINS_ENCOUNTERED_BUTTON_OPEN_PREFERENCES", @"Button in dialog to open plugin preferences pane!")];
       NSModalResponse returnCode = [alert runModal];
-      BOOL suppressWarning = (alert.suppressionButton.state == NSOnState);
+			BOOL suppressWarning = (alert.suppressionButton.state == NSControlStateValueOn);
       [NSUserDefaults.standardUserDefaults setBool:suppressWarning forKey:kMPSettingsKeyHideIncopatiblePluginsWarning];
       switch(returnCode) {
         case NSAlertFirstButtonReturn: {

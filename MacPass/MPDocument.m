@@ -304,7 +304,7 @@ NSString *const MPDocumentGroupKey                            = @"MPDocumentGrou
       [alert addButtonWithTitle:NSLocalizedString(@"KEEP_OTHER_DISCARD_MINE", @"Button in dialog to reopen the file!")];
       [alert addButtonWithTitle:NSLocalizedString(@"KEEP_MINE_DISCARD_OTHER", @"Button in dialog to ignore the changes to an open file!")];
       [alert beginSheetModalForWindow:self.windowForSheet completionHandler:^(NSModalResponse returnCode) {
-        BOOL useAsDefault = (alert.suppressionButton.state == NSOnState);
+				BOOL useAsDefault = (alert.suppressionButton.state == NSControlStateValueOn);
         switch(returnCode) {
           case NSAlertFirstButtonReturn: {
             [self _handleFileChangeWithStrategy:MPFileChangeStrategyMerge setAsDefault:useAsDefault];

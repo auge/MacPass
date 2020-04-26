@@ -177,7 +177,7 @@ typedef NS_ENUM(NSUInteger, MPContextTab) {
   for(NSMenuItem *item in self.specialFilterPopUpButton.menu.itemArray) {
     MPEntrySearchFlags flag = item.tag;
     if(flag == MPEntrySearchNone) {
-      item.state = NSOffState;
+			item.state = NSControlStateValueOff;
       item.enabled = NO;
       continue;
     }

@@ -51,8 +51,8 @@
     [myBundle loadNibNamed:@"OpenPanelAccessoryView" owner:self topLevelObjects:&topLevelObjects];
   }
   self.openPanel.allowedFileTypes = @[MPKdbDocumentUTI, MPKdbxDocumentUTI];
-  self.allowAllCheckBox.state = NSOffState;
-  self.showHiddenCheckBox.state = NSOffState;
+	self.allowAllCheckBox.state = NSControlStateValueOff;
+	self.showHiddenCheckBox.state = NSControlStateValueOff;
   self.openPanel.accessoryView = self.accessoryView;
   [super beginOpenPanel:openPanel forTypes:inTypes completionHandler:completionHandler];
 }
